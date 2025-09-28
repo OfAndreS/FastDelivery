@@ -1,0 +1,53 @@
+CARRO
+Ford Ka
+FKT-2015
+2015
+Preto
+MOTO
+Honda Biz
+HDA-2022
+2022
+Vermelha
+FUNCIONARIO
+Joao da Silva
+111.222.333-44
+AUTONOMO
+Maria Souza
+555.666.777-88
+CARRO
+Fiat Uno
+UNO-1998
+1998
+Branco
+AUTONOMO
+Carlos Pereira
+888.777.666-55
+MOTO
+Yamaha NMAX
+RCD-1G23
+2024
+Azul
+CARRO
+Hyundai HB20
+HYU-2021
+2021
+Prata
+FUNCIONARIO
+Ana Costa
+123.456.789-00
+CARRO
+Jeep Renegade
+JEP-4E56
+2023
+Cinza
+AUTONOMO
+Lucas Fernandes
+987.654.321-99
+MOTO
+Honda Pop 110i
+POP-1A11
+2020
+Branca
+FUNCIONARIO
+Ricardo Alves
+234.567.890-11
