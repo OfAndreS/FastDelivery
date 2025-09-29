@@ -67,29 +67,31 @@
 ```bash
 FastDelivery/
 └── src/
-    └── com/
-        └── fastdelivery/
-            ├── application/
-            │   └── Main.java               # Classe principal, inicia a aplicação e o menu.
-            ├── factory/
-            │   ├── EntregaFactory.java     # Cria novas instâncias de Entrega.
-            │   ├── EntregadorFactory.java  # Cria entregadores (Funcionário ou Autônomo).
-            │   └── VeiculoFactory.java     # Cria veículos (Carro ou Moto).
-            ├── interfaces/
-            │   └── Custo.java              # Interface que define o método para calcular o frete.
-            ├── model/
-            │   ├── Autonomo.java           # Modelo para o entregador autônomo.
-            │   ├── Carro.java              # Modelo para o veículo carro.
-            │   ├── EntregadorAbstrato.java # Classe base para os tipos de entregadores.
-            │   ├── Funcionario.java        # Modelo para o entregador funcionário.
-            │   ├── Moto.java               # Modelo para o veículo moto.
-            │   └── VeiculoAbstrato.java    # Classe base para os tipos de veículos.
-            ├── service/
-            │   ├── Entrega.java            # Representa uma entrega individual com veículo, entregador e distância.
-            │   └── ServicoEntrega.java     # Gerencia a lista de entregas e os cálculos de custo total.
-            └── util/
-                ├── AppConfig.java          # Armazena constantes e configurações da aplicação.
-                └── ConsoleUI.java          # Controla a interface do usuário no console.
+    └── main/
+        └── java/
+            └── com/
+                └── fastdelivery/
+                    ├── application/
+                    │   └── Main.java               # Classe principal, inicia a aplicação e o menu.
+                    ├── factory/
+                    │   ├── EntregaFactory.java     # Cria novas instâncias de Entrega.
+                    │   ├── EntregadorFactory.java  # Cria entregadores (Funcionário ou Autônomo).
+                    │   └── VeiculoFactory.java     # Cria veículos (Carro ou Moto).
+                    ├── interfaces/
+                    │   └── Custo.java              # Interface que define o método para calcular o frete.
+                    ├── model/
+                    │   ├── Autonomo.java           # Modelo para o entregador autônomo.
+                    │   ├── Carro.java              # Modelo para o veículo carro.
+                    │   ├── EntregadorAbstrato.java # Classe base para os tipos de entregadores.
+                    │   ├── Funcionario.java        # Modelo para o entregador funcionário.
+                    │   ├── Moto.java               # Modelo para o veículo moto.
+                    │   └── VeiculoAbstrato.java    # Classe base para os tipos de veículos.
+                    ├── service/
+                    │   ├── Entrega.java            # Representa uma entrega individual.
+                    │   └── ServicoEntrega.java     # Gerencia a lista de entregas e os cálculos.
+                    └── util/
+                        ├── AppConfig.java          # Armazena constantes e configurações da aplicação.
+                        └── ConsoleUI.java          # Controla a interface do usuário no console.
 ```
 
 <br>
@@ -127,29 +129,29 @@ Para ter uma cópia local deste projeto e executá-lo, siga os passos abaixo.
 1 ) **Clone o repositório:**
 
 ```bash
-git clone [https://github.com/OfAndreS/FastDelivery.git](https://github.com/OfAndreS/FastDelivery.git)
+git clone https://github.com/OfAndreS/FastDelivery.git
 ````
 
 2 ) **Navegue até o diretório `src` do projeto:**
 
 ```bash
-cd FastDelivery/FastDelivery-main/src
+cd FastDelivery
 ```
 
 3 ) **Compile todos os arquivos Java a partir do diretório `src`:**
 
 ```bash
 # Para sistemas baseados em Unix (Linux, macOS)
-javac $(find . -name "*.java")
+mkdir -p bin && javac -d bin $(find src/main/java -name "*.java")
 
 # Para Windows (PowerShell)
-javac (Get-ChildItem -Recurse -Filter *.java).FullName
+if (-not (Test-Path -Path "bin")) { New-Item -ItemType Directory -Path "bin" }; javac -d bin (Get-ChildItem -Recurse -Path src/main/java -Filter *.java).FullName
 ```
 
 4 ) **Execute a classe principal a partir do diretório `src`:**
 
 ```bash
-java com.fastdelivery.application.Main
+java -cp bin com.fastdelivery.application.Main
 ```
 
 </details>
