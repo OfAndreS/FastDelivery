@@ -11,7 +11,6 @@
 </div>
 
 <br>
-<br>
 
 <div align="center">
   <img src="https://img.shields.io/github/license/OfAndreS/FastDelivery?style=for-the-badge" alt="Licença">
@@ -35,6 +34,8 @@
 |**Sobre o Projeto**|
 |-|
 |O FastDelivery é um sistema de console em Java para gerenciamento de entregas. Ele permite a criação de entregas, associando diferentes tipos de veículos e entregadores, e calcula o custo total com base na distância. O projeto utiliza o padrão de projeto Factory para a criação de veículos e entregadores, promovendo um código mais organizado e extensível.|
+
+<br>
 
 <div align="center"\>
 <img width="1361" height="626" alt="image" src="https://github.com/user-attachments/assets/b770eb65-a6f0-411f-99e2-bd6fd0eec101" />
