@@ -9,7 +9,8 @@ public class EntregadorFactory {
 
     private final Scanner scanner;
 
-    public EntregadorFactory(Scanner scanner) {
+    public EntregadorFactory(Scanner scanner) 
+    {
         this.scanner = scanner;
     }
 

@@ -14,14 +14,16 @@ public class EntregaFactory {
     private final VeiculoFactory veiculoFactory;
     private final EntregadorFactory entregadorFactory;
 
-    public EntregaFactory(Scanner scanner, ConsoleUI ui) {
+    public EntregaFactory(Scanner scanner, ConsoleUI ui) 
+    {
         this.scanner = scanner;
         this.ui = ui;
         this.veiculoFactory = new VeiculoFactory(scanner);
         this.entregadorFactory = new EntregadorFactory(scanner);
     }
 
-    public Entrega createNewEntrega() {
+    public Entrega createNewEntrega() 
+    {
         System.out.println("| CRIANDO UMA NOVA ENTREGA");
         ui.printHead();
 

@@ -8,12 +8,14 @@ public class ConsoleUI {
 
     private final Scanner scanner;
 
-    public ConsoleUI(Scanner scanner) {
+    public ConsoleUI(Scanner scanner) 
+    {
         this.scanner = scanner;
     }
 
-    public void printHead() {
-        System.out.println("|  * * * * * * * * * * * * * * *");
+    public void printHead() 
+    {
+        System.out.println("\n|  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *\n");
     }
 
     public int selector(List<String> myObjList) 

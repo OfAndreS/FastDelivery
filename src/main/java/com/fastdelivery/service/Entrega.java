@@ -1,6 +1,9 @@
 package com.fastdelivery.service;
 
 import com.fastdelivery.model.VeiculoAbstrato;
+
+import java.util.ArrayList;
+
 import com.fastdelivery.model.EntregadorAbstrato;
 
 public class Entrega 
@@ -22,6 +25,16 @@ public class Entrega
     {
         this.valorTotalDaEntrega = myVeiculo.custoDoFrete(distanciaEmKm) + myEntregador.custoDoFrete(distanciaEmKm);
         return valorTotalDaEntrega;
+    }
+
+    public void listarTodasAsEntregas(ArrayList<Entrega> myEntregaArray)
+    {
+        System.out.println("| LISTA DE ENTREGAS");
+        System.out.println("| ");
+        for(Entrega myEntrega : myEntregaArray)
+        {
+            System.out.println("| Veiculo: " + myEntrega.myVeiculo.getModeloVeiculo() + " - Entregador: " + myEntrega.myEntregador.getNomeFuncionario() + " - ValorTotal: " + myEntrega.calcularCustoTotal() );
+        }
     }
 
     
