@@ -7,7 +7,7 @@ public abstract class EntregadorAbstrato implements Custo
     protected String nomeFuncionario;
     protected String cpfFuncionario;
 
-    EntregadorAbstrato(String nomeFuncionario, String cpfFuncionario)
+    public EntregadorAbstrato(String nomeFuncionario, String cpfFuncionario)
     {
         this.nomeFuncionario = nomeFuncionario;
         this.cpfFuncionario = cpfFuncionario;

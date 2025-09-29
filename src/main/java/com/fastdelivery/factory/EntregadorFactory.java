@@ -1,6 +1,7 @@
 package com.fastdelivery.factory;
 
 import com.fastdelivery.model.Autonomo;
+import com.fastdelivery.model.EntregadorAbstrato; // Importe a classe abstrata
 import com.fastdelivery.model.Funcionario;
 import java.util.Scanner;
 
@@ -12,20 +13,37 @@ public class EntregadorFactory {
         this.scanner = scanner;
     }
 
-    public Funcionario createFuncionario() {
-        System.out.println("--- Criando Funcionário ---");
-        System.out.println("| Digite - Nome do Funcionário:");
+    public EntregadorAbstrato create(String tipoEntregador) 
+    {
+        switch (tipoEntregador) 
+        {
+            case "FUNCIONARIO":
+                return createFuncionario();
+            case "AUTONOMO":
+                return createAutonomo();
+            default:
+                throw new IllegalArgumentException("Tipo de entregador desconhecido: " + tipoEntregador);
+        }
+    }
+
+    private Funcionario createFuncionario() 
+    {
+        System.out.println("| CRIANDO FUNCIONÁRIO          ");
+        System.out.println("|                              ");
+        System.out.print("| Digite - Nome do Funcionário:  ");
         String nome = scanner.nextLine();
-        System.out.println("| Digite - CPF do Funcionário:");
+        System.out.print("| Digite - CPF do Funcionário:   ");
         String cpf = scanner.nextLine();
         return new Funcionario(nome, cpf);
     }
 
-    public Autonomo createAutonomo() {
-        System.out.println("--- Criando Autônomo ---");
-        System.out.println("| Digite - Nome do Autônomo:");
+    private Autonomo createAutonomo() 
+    {
+        System.out.println("| CRIANDO AUTÔNOMO          ");
+        System.out.println("|                           ");
+        System.out.print("| Digite - Nome do Autônomo:  ");
         String nome = scanner.nextLine();
-        System.out.println("| Digite - CPF do Autônomo:");
+        System.out.print("| Digite - CPF do Autônomo:   ");
         String cpf = scanner.nextLine();
         return new Autonomo(nome, cpf);
     }
