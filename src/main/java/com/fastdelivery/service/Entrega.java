@@ -31,6 +31,13 @@ public class Entrega
     {
         System.out.println("| LISTA DE ENTREGAS");
         System.out.println("| ");
+
+        if( myEntregaArray.isEmpty())
+        {
+            System.out.println("| ERRO - Nenhuma Entrega foi adicionada");
+            return;
+        }
+
         for(Entrega myEntrega : myEntregaArray)
         {
             System.out.println("| Veiculo: " + myEntrega.myVeiculo.getModeloVeiculo() + " - Entregador: " + myEntrega.myEntregador.getNomeFuncionario() + " - ValorTotal: " + myEntrega.calcularCustoTotal() );

@@ -26,6 +26,17 @@ public class VeiculoFactory {
                 throw new IllegalArgumentException("Tipo de veículo desconhecido: " + tipoVeiculo);
         }
     }
+    
+    public VeiculoAbstrato createFromData(String tipoVeiculo, String modelo, String placa, String ano, String cor) {
+        switch (tipoVeiculo) {
+            case "CARRO":
+                return new Carro(modelo, placa, ano, cor);
+            case "MOTO":
+                return new Moto(modelo, placa, ano, cor);
+            default:
+                throw new IllegalArgumentException("Tipo de veículo desconhecido: " + tipoVeiculo);
+        }
+    }
 
     private Carro createCarro() 
     {

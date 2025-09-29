@@ -27,6 +27,19 @@ public class EntregadorFactory {
         }
     }
 
+    public EntregadorAbstrato createFromData(String tipoEntregador, String nome, String cpf) 
+    {
+        switch (tipoEntregador) 
+        {
+            case "FUNCIONARIO":
+                return new Funcionario(nome, cpf);
+            case "AUTONOMO":
+                return new Autonomo(nome, cpf);
+            default:
+                throw new IllegalArgumentException("Tipo de entregador desconhecido: " + tipoEntregador);
+        }
+    }
+
     private Funcionario createFuncionario() 
     {
         System.out.println("| CRIANDO FUNCIONÁRIO          ");
