@@ -23,9 +23,9 @@
 <br>
 
 <p align="center">
-  <a href="estrutura-do-projeto">Estrutura do Projeto</a> •
-  <a href="tecnologias">Tecnologias</a> •
-  <a href="como-executar">Como Executar</a> •
+  <a href="#estrutura-do-projeto">Estrutura do Projeto</a> •
+  <a href="#tecnologias">Tecnologias</a> •
+  <a href="#como-executar">Como Executar</a> •
 </p>
 
 -----
