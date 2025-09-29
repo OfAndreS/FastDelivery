@@ -23,6 +23,10 @@ public class Main
 
     public void startMenu() 
     {
+        ui.printHead();
+        ConsoleUI.printFastDeliveryAscii();
+        System.out.println("| Made By: André Soares Gomes Moreira");
+
         while (true) 
         {
             ui.printHead();
