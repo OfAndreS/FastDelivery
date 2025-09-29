@@ -1,48 +1,37 @@
 package com.fastdelivery.service;
 
 import com.fastdelivery.model.VeiculoAbstrato;
-
-import java.util.ArrayList;
-
 import com.fastdelivery.model.EntregadorAbstrato;
 
 public class Entrega 
 {
-    private VeiculoAbstrato myVeiculo;
-    private EntregadorAbstrato myEntregador;
-    private double distanciaEmKm;
+    private final VeiculoAbstrato myVeiculo;
+    private final EntregadorAbstrato myEntregador;
+    private final double distanciaEmKm;
     private double valorTotalDaEntrega;
 
-
-    public Entrega(VeiculoAbstrato myVeiculo, EntregadorAbstrato myEntregador, double distanciaEmKm)
+    public Entrega(VeiculoAbstrato myVeiculo, EntregadorAbstrato myEntregador, double distanciaEmKm) 
     {
         this.myVeiculo = myVeiculo;
         this.myEntregador = myEntregador;
         this.distanciaEmKm = distanciaEmKm;
     }
 
-    public double calcularCustoTotal()
+    public double calcularCustoTotal() 
     {
         this.valorTotalDaEntrega = myVeiculo.custoDoFrete(distanciaEmKm) + myEntregador.custoDoFrete(distanciaEmKm);
         return valorTotalDaEntrega;
     }
 
-    public void listarTodasAsEntregas(ArrayList<Entrega> myEntregaArray)
+
+    public VeiculoAbstrato getMyVeiculo() 
     {
-        System.out.println("| LISTA DE ENTREGAS");
-        System.out.println("| ");
-
-        if( myEntregaArray.isEmpty())
-        {
-            System.out.println("| ERRO - Nenhuma Entrega foi adicionada");
-            return;
-        }
-
-        for(Entrega myEntrega : myEntregaArray)
-        {
-            System.out.println("| Veiculo: " + myEntrega.myVeiculo.getModeloVeiculo() + " - Entregador: " + myEntrega.myEntregador.getNomeFuncionario() + " - ValorTotal: " + myEntrega.calcularCustoTotal() );
-        }
+        return myVeiculo;
     }
 
-    
+    public EntregadorAbstrato getMyEntregador() 
+    {
+        return myEntregador;
+    }
+
 }

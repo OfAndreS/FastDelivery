@@ -25,11 +25,12 @@ public class EntregaFactory {
 
     public Entrega createNewEntrega() 
     {
-        System.out.println("| CRIANDO UMA NOVA ENTREGA");
         ui.printHead();
+        System.out.println("| CRIANDO UMA NOVA ENTREGA     ");
+        System.out.println("|                              ");
 
         // Criando Veiculo
-        System.out.println("| Selecione o tipo de veículo:");
+        System.out.println("| Selecione o tipo de veículo: ");
         int indiceVeiculo = ui.selector(AppConfig.TIPOS_DE_VEICULO);
         String tipoVeiculo = AppConfig.TIPOS_DE_VEICULO.get(indiceVeiculo);
         
